@@ -5,13 +5,13 @@
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bugs": "https://github.com/JamieMason/logservable/issues",
   "dependencies": {
-    "xstream": "5.2.4"
+    "xstream": "10.9.0"
   },
   "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-preset-es2015": "6.22.0",
-    "rimraf": "2.5.4",
-    "xo": "0.17.1"
+    "babel-cli": "6.26.0",
+    "babel-preset-es2015": "6.24.1",
+    "rimraf": "2.6.1",
+    "xo": "0.18.2"
   },
   "files": [
     "dist"
