@@ -1,43 +1,44 @@
 {
   "name": "logservable",
-  "description": "git log as an observable stream",
+  "description": "git log as an observable stream of JSON objects",
   "version": "0.0.0",
-  "author": "Jamie Mason (https://github.com/JamieMason)",
-  "bugs": {
-    "url": "https://github.com/JamieMason/logservable/issues"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    },
-    "ghooks": {
-      "commit-msg": "validate-commit-msg",
-      "pre-commit": "npm run lint"
-    }
-  },
+  "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
+  "bugs": "https://github.com/JamieMason/logservable/issues",
   "dependencies": {
     "xstream": "5.2.4"
   },
   "devDependencies": {
-    "commit-release": "0.6.1",
-    "cz-conventional-changelog": "1.1.6",
-    "ghooks": "1.2.4",
-    "semistandard": "8.0.0",
-    "validate-commit-msg": "2.6.1"
+    "babel-cli": "6.24.1",
+    "babel-preset-es2015": "6.22.0",
+    "rimraf": "2.5.4",
+    "xo": "0.17.1"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/JamieMason/logservable",
   "keywords": [
     "git",
     "git-log"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JamieMason/logservable.git"
-  },
+  "main": "dist/index.js",
+  "repository": "JamieMason/logservable",
   "scripts": {
-    "commit-release": "commit-release",
-    "lint": "semistandard --format"
+    "build": "babel --out-dir ./dist --ignore node_modules ./src",
+    "lint": "xo",
+    "prebuild": "rimraf dist",
+    "prepack": "npm run build",
+    "test": "npm run lint"
+  },
+  "xo": {
+    "envs": [
+      "node"
+    ],
+    "rules": {
+      "object-curly-spacing": 0
+    },
+    "esnext": true,
+    "space": 2
   }
 }
