@@ -1,7 +1,7 @@
 {
   "name": "logservable",
   "description": "git log as an observable stream of JSON objects",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bugs": "https://github.com/JamieMason/logservable/issues",
   "dependencies": {
