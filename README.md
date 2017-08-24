@@ -101,3 +101,7 @@ treeHash
 ```
 
 For more information see the [Git Pretty Formats Documentation.](https://git-scm.com/docs/pretty-formats).
+
+### `oldestFirst:Boolean`
+
+Whether to read the commits in order of oldest to newest (defaults to false).
