@@ -1,3 +1,18 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/JamieMason/logservable/compare/0.2.0...1.0.0) (2017-08-28)
+
+
+### Features
+
+* **tags:** add logservable.tags(directory) ([c39e64b](https://github.com/JamieMason/logservable/commit/c39e64b))
+
+
+### BREAKING CHANGES
+
+* **tags:** logservable() is now logservable.commits()
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/JamieMason/logservable/compare/0.1.1...0.2.0) (2017-08-24)
 

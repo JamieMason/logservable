@@ -4,8 +4,6 @@ git log as an observable stream of JSON objects
 
 ## Installation
 
-Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
-
 ```sh
 npm install logservable --save
 ```
@@ -33,4 +31,3 @@ npm test
 ## License
 
 MIT
-
