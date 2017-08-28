@@ -1,19 +1,15 @@
 import { spawn } from 'child_process';
 
-const toNode = field =>
-  '<name>placeholder</name>'
-    .replace(/name/g, field.name)
-    .replace(/placeholder/g, field.placeholder);
-
 export default (directory, fields, oldestFirst) => {
-  const args = [
+  const toNode = ({ name, placeholder }) => `<${name}>${placeholder}</${name}>`;
+  const getNodes = fields => fields.map(toNode).join('');
+  const baseArgs = [
     'log',
-    `--pretty=format:<commit>${fields.map(toNode).join('')}</commit>`,
+    `--pretty=format:<commit>${getNodes(fields)}</commit>`,
     '--author-date-order'
   ];
-  const task = spawn('git', oldestFirst === true ? args.concat('--reverse') : args, {
-    cwd: directory
-  });
+  const args = oldestFirst === true ? baseArgs.concat('--reverse') : baseArgs;
+  const task = spawn('git', args, { cwd: directory });
   task.stdout.setEncoding('utf8');
   task.stderr.setEncoding('utf8');
   return task;
