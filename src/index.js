@@ -1,31 +1,32 @@
-import xs from 'xstream';
 import getFields from './lib/get-fields';
 import readGitLog from './lib/read-git-log';
+import readGitTags from './lib/read-git-tags';
+import streamProcess from './lib/stream-process';
 
-export default (directory, fieldNames, oldestFirst) => {
-  let task;
-  return xs.create({
-    start(listener) {
-      const fields = getFields(fieldNames);
-      task = readGitLog(directory, fields, oldestFirst);
-      task.on('close', () => listener.complete());
-      task.stdout.on('data', str =>
-        str
-          .split(/\n?<commit>|<\/commit>\n?/g)
-          .filter(Boolean)
-          .map(line =>
-            fields.reduce((commit, field) => {
-              const start = line.indexOf(field.openTag) + field.openTag.length;
-              const end = line.indexOf(field.closeTag);
-              commit[field.name] = line.substring(start, end).trim();
-              return commit;
-            }, {})
-          )
-          .forEach(commit => listener.next(commit))
+export const commits = (directory, fieldNames, oldestFirst) => {
+  const fields = getFields(fieldNames);
+  return streamProcess({
+    start: () => readGitLog(directory, fields, oldestFirst),
+    mapData: stdout => {
+      return stdout.split(/\n?<commit>|<\/commit>\n?/g).filter(Boolean).map(line =>
+        fields.reduce((commit, field) => {
+          const start = line.indexOf(field.openTag) + field.openTag.length;
+          const end = line.indexOf(field.closeTag);
+          commit[field.name] = line.substring(start, end).trim();
+          return commit;
+        }, {})
       );
-    },
-    stop() {
-      task.kill();
     }
   });
 };
+
+export const tags = directory =>
+  streamProcess({
+    start: () => readGitTags(directory),
+    mapData: stdout =>
+      stdout
+        .split('\n')
+        .filter(Boolean)
+        .map(line => line.split(' refs/tags/'))
+        .map(([commitHash, tagName]) => ({ commitHash, tagName }))
+  });
