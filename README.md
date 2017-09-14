@@ -30,8 +30,8 @@ npm install --save logservable
 
 ## `logservable.commits`
 
-`logservable.commits` returns a [Stream](https://github.com/staltz/xstream#stream)
-which takes a [Listener](https://github.com/staltz/xstream#listener);
+`logservable.commits` returns an [RxJS Observable][observable]
+which takes an [RxJS Observer][observer];
 
 ```js
 import * as logservable from 'logservable';
@@ -103,7 +103,7 @@ subject
 treeHash
 ```
 
-For more information see the [Git Pretty Formats Documentation.](https://git-scm.com/docs/pretty-formats).
+For more information see the [Git Pretty Formats Documentation](https://git-scm.com/docs/pretty-formats).
 
 #### `oldestFirst:Boolean`
 
@@ -111,8 +111,8 @@ Whether to read the commits in order of oldest to newest (defaults to false).
 
 ## `logservable.tags`
 
-`logservable.tags` returns a [Stream](https://github.com/staltz/xstream#stream)
-which takes a [Listener](https://github.com/staltz/xstream#listener);
+`logservable.tags` returns an [RxJS Observable][observable]
+which takes an [RxJS Observer][observer];
 
 ```js
 import * as logservable from 'logservable';
@@ -152,3 +152,7 @@ The Stream told me it is done.
 #### `directory:String`
 
 Absolute path to your locally cloned git repository.
+
+<!-- links -->
+[observable]: http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
+[observer]: http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~ObserverDoc.html
