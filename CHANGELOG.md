@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/JamieMason/logservable/compare/1.0.0...1.1.0) (2017-09-14)
+
+
+### Features
+
+* **core:** switch from xstream to RxJS ([3b4f3e6](https://github.com/JamieMason/logservable/commit/3b4f3e6))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/JamieMason/logservable/compare/0.2.0...1.0.0) (2017-08-28)
 

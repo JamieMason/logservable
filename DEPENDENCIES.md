@@ -18,7 +18,7 @@ npm test
 
 ## Dependencies
 
-- [xstream](https://github.com/staltz/xstream): An extremely intuitive, small, and fast functional reactive stream library for JavaScript
+- [rxjs](https://github.com/ReactiveX/RxJS): Reactive Extensions for modern JavaScript
 
 ## Dev Dependencies
 
