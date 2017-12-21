@@ -44,12 +44,7 @@ const commit$ = logservable.commits('/Users/foldleft/Dev/my-project', [
 
 const listener = {
   next(commit) {
-    console.log(
-      '%s committed %s %s',
-      commit.authorName,
-      commit.commitHash,
-      commit.authorDateRelative
-    );
+    console.log('%s committed %s %s', commit.authorName, commit.commitHash, commit.authorDateRelative);
   },
   error(err) {
     console.error('The Stream gave me an error: ', err);
@@ -121,11 +116,7 @@ const tag$ = logservable.tags('/Users/foldleft/Dev/my-project');
 
 const listener = {
   next(tag) {
-    console.log(
-      'commit %s is tagged as %s',
-      tag.commitHash,
-      tag.tagName
-    );
+    console.log('commit %s is tagged as %s', tag.commitHash, tag.tagName);
   },
   error(err) {
     console.error('The Stream gave me an error: ', err);
@@ -154,5 +145,6 @@ The Stream told me it is done.
 Absolute path to your locally cloned git repository.
 
 <!-- links -->
+
 [observable]: http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
 [observer]: http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~ObserverDoc.html

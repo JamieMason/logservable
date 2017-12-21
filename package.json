@@ -5,13 +5,14 @@
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bugs": "https://github.com/JamieMason/logservable/issues",
   "dependencies": {
-    "rxjs": "5.4.3"
+    "rxjs": "5.5.5"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-preset-es2015": "6.24.1",
-    "rimraf": "2.6.1",
-    "xo": "0.18.2"
+    "@types/node": "8.5.2",
+    "prettier": "1.9.2",
+    "rimraf": "2.6.2",
+    "tslint": "5.8.0",
+    "typescript": "2.6.2"
   },
   "files": [
     "dist"
@@ -19,26 +20,19 @@
   "homepage": "https://github.com/JamieMason/logservable",
   "keywords": [
     "git",
-    "git-log"
+    "git-log",
+    "rxjs"
   ],
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "JamieMason/logservable",
   "scripts": {
-    "build": "babel --out-dir ./dist --ignore node_modules ./src",
-    "lint": "xo",
-    "prebuild": "rimraf dist",
-    "prepack": "npm run build",
-    "test": "npm run lint"
+    "build": "tsc --project .",
+    "format": "prettier --write '**/*.md' './src/**/*.ts'",
+    "lint": "tslint --fix --project ./tsconfig.json",
+    "prebuild": "rimraf ./dist",
+    "prelint": "npm run format",
+    "prepack": "npm run build"
   },
-  "xo": {
-    "envs": [
-      "node"
-    ],
-    "rules": {
-      "object-curly-spacing": 0
-    },
-    "esnext": true,
-    "space": 2
-  }
+  "typings": "dist/index.d.ts"
 }

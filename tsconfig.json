@@ -1,0 +1,20 @@
+{
+  "files": [
+    "./src/index.ts"
+  ],
+  "compilerOptions": {
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es3",
+    "types": [
+      "node"
+    ]
+  }
+}

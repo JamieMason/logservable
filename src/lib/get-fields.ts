@@ -1,4 +1,6 @@
-const fields = {
+import { FieldName, ICommit, IField } from '../typings';
+
+const placeholders: ICommit = {
   authorDate: '%aI',
   authorDateRelative: '%ar',
   authorEmail: '%aE',
@@ -20,10 +22,12 @@ const fields = {
   treeHash: '%T'
 };
 
-export default (keys = Object.keys(fields)) =>
-  keys.map(key => ({
+const everyFieldName: FieldName[] = Object.keys(placeholders) as FieldName[];
+
+export const getFields = (fieldNames: FieldName[] = everyFieldName) =>
+  fieldNames.map((key): IField => ({
     closeTag: `</${key}>`,
     name: key,
     openTag: `<${key}>`,
-    placeholder: fields[key]
+    placeholder: placeholders[key] || ''
   }));
