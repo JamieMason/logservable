@@ -1,4 +1,4 @@
-# logservable
+# logservable 
 
 git log as an observable stream of JSON objects
 
@@ -8,23 +8,20 @@ git log as an observable stream of JSON objects
 npm install logservable --save
 ```
 
-## Tests
 
-```sh
-npm install
-npm test
-```
 
 ## Dependencies
 
-* [rxjs](https://github.com/ReactiveX/RxJS): Reactive Extensions for modern JavaScript
+- [rxjs](https://github.com/ReactiveX/RxJS): Reactive Extensions for modern JavaScript
 
 ## Dev Dependencies
 
-* [babel-cli](https://github.com/babel/babel/tree/master/packages): Babel command line.
-* [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages): Babel preset for all es2015 plugins.
-* [rimraf](https://github.com/isaacs/rimraf): A deep deletion module for node (like `rm -rf`)
-* [xo](https://github.com/sindresorhus/xo): JavaScript happiness style linter ❤️
+- [@types/node](https://www.github.com/DefinitelyTyped/DefinitelyTyped.git): TypeScript definitions for Node.js
+- [prettier](https://github.com/prettier/prettier): Prettier is an opinionated code formatter
+- [rimraf](https://github.com/isaacs/rimraf): A deep deletion module for node (like `rm -rf`)
+- [tslint](https://github.com/palantir/tslint): An extensible static analysis linter for the TypeScript language
+- [typescript](https://github.com/Microsoft/TypeScript): TypeScript is a language for application scale JavaScript development
+
 
 ## License
 
