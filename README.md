@@ -30,8 +30,7 @@ npm install --save logservable
 
 ## `logservable.commits`
 
-`logservable.commits` returns an [RxJS Observable][observable]
-which takes an [RxJS Observer][observer];
+`logservable.commits` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];
 
 ```js
 import * as logservable from 'logservable';
@@ -106,8 +105,7 @@ Whether to read the commits in order of oldest to newest (defaults to false).
 
 ## `logservable.tags`
 
-`logservable.tags` returns an [RxJS Observable][observable]
-which takes an [RxJS Observer][observer];
+`logservable.tags` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];
 
 ```js
 import * as logservable from 'logservable';
