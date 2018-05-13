@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { getFields } from './lib/get-fields';
 import { readGitLog } from './lib/read-git-log';
 import { readGitTags } from './lib/read-git-tags';

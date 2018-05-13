@@ -1,5 +1,5 @@
 import { ChildProcess } from 'child_process';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 
 export interface ICommit {
   authorDate?: string;

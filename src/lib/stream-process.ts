@@ -1,4 +1,4 @@
-import { Observable, Observer } from 'rxjs/Rx';
+import { Observable, Observer } from 'rxjs';
 import { IStreamProcessOptions, StreamProcessor } from '../typings';
 
 export const streamProcess: StreamProcessor = <T>({ start, mapData }: IStreamProcessOptions) =>
