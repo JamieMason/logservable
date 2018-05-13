@@ -1,4 +1,33 @@
-import { FieldName, ICommit, IField } from '../typings';
+export interface IField {
+  closeTag: string;
+  name: keyof ICommit;
+  openTag: string;
+  placeholder: string;
+}
+
+export interface ICommit {
+  authorDate?: string;
+  authorDateRelative?: string;
+  authorEmail?: string;
+  authorName?: string;
+  body?: string;
+  commitHash?: string;
+  commitNotes?: string;
+  committerDate?: string;
+  committerDateRelative?: string;
+  committerEmail?: string;
+  committerName?: string;
+  parentHashes?: string;
+  reflogIdentityEmail?: string;
+  reflogIdentityName?: string;
+  reflogSelector?: string;
+  reflogSubject?: string;
+  sanitizedSubjectLine?: string;
+  subject?: string;
+  treeHash?: string;
+}
+
+export type FieldName = keyof ICommit;
 
 const placeholders: ICommit = {
   authorDate: '%aI',

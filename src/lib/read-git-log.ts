@@ -1,5 +1,5 @@
 import { ChildProcess, spawn } from 'child_process';
-import { IField } from '../typings';
+import { IField } from './get-fields';
 
 const toNode = ({ name, placeholder }: IField) => `<${name}>${placeholder}</${name}>`;
 const getNodes = (fields: IField[]) => fields.map(toNode).join('');

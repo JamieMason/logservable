@@ -1,11 +1,15 @@
 import { Observable } from 'rxjs';
-import { getFields } from './lib/get-fields';
+import { FieldName, getFields, ICommit, IField } from './lib/get-fields';
 import { readGitLog } from './lib/read-git-log';
 import { readGitTags } from './lib/read-git-tags';
 import { streamProcess } from './lib/stream-process';
-import { FieldName, ICommit, IField, ITag } from './typings';
 
-export const commits = (directory: string, fieldNames?: FieldName[], oldestFirst?: boolean) => {
+export interface ITag {
+  commitHash?: string;
+  tagName?: string;
+}
+
+export const commits = (directory: string, fieldNames?: FieldName[], oldestFirst?: boolean): Observable<ICommit> => {
   const fields = getFields(fieldNames);
   return streamProcess<ICommit>({
     mapData: (stdout) => {
