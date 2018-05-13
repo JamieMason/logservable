@@ -1,3 +1,12 @@
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/JamieMason/logservable/compare/1.2.0...1.3.0) (2018-05-13)
+
+### Features
+
+* **core:** only return commits from the given directory
+  ([e2cf938](https://github.com/JamieMason/logservable/commit/e2cf938))
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/JamieMason/logservable/compare/1.1.0...1.2.0) (2017-12-24)
