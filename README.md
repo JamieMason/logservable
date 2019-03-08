@@ -33,14 +33,15 @@ npm install --save logservable
 `logservable.commits` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];
 
 ```js
-import * as logservable from 'logservable';
+import { commits } from 'logservable';
+import { take } from 'rxjs/operators';
 
-const commit$ = logservable.commits('/Users/foldleft/Dev/my-project', {
+const commit$ = commits('/Users/foldleft/Dev/my-project', {
   fieldNames: ['authorDateRelative', 'authorName', 'commitHash'],
   oldestFirst: false
 });
 
-const listener = {
+commit$.pipe(take(3)).subscribe({
   next(commit) {
     console.log('%s committed %s %s', commit.authorName, commit.commitHash, commit.authorDateRelative);
   },
@@ -50,9 +51,7 @@ const listener = {
   complete() {
     console.log('The Stream told me it is done.');
   }
-};
-
-commit$.take(3).addListener(listener);
+});
 ```
 
 Our example would produce;
@@ -107,11 +106,12 @@ Whether to read the commits in order of oldest to newest (defaults to false).
 `logservable.tags` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];
 
 ```js
-import * as logservable from 'logservable';
+import { tags } from 'logservable';
+import { take } from 'rxjs/operators';
 
-const tag$ = logservable.tags('/Users/foldleft/Dev/my-project');
+const tag$ = tags('/Users/foldleft/Dev/my-project');
 
-const listener = {
+tag$.pipe(take(3)).subscribe({
   next(tag) {
     console.log('commit %s is tagged as %s', tag.commitHash, tag.tagName);
   },
@@ -121,9 +121,7 @@ const listener = {
   complete() {
     console.log('The Stream told me it is done.');
   }
-};
-
-tag$.take(3).addListener(listener);
+});
 ```
 
 Our example would produce;
