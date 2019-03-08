@@ -48,10 +48,30 @@ export interface ITag {
   tagName?: string;
 }
 
-export const commits = (directory: string, fieldNames?: FieldName[], oldestFirst?: boolean): Observable<ICommit> => {
+/**
+ * @param directory
+ * Absolute path to your locally cloned git repository
+ *
+ * @param options.fieldNames
+ * Optional array of strings representing the data required from each git commit (defaults to all)
+ * For more information see the [Git Pretty Formats Documentation](https://git-scm.com/docs/pretty-formats)
+ *
+ * @param options.oldestFirst
+ * Whether to read the commits in order of oldest to newest (defaults to false)
+ */
+export const commits = (
+  directory: string,
+  {
+    fieldNames,
+    oldestFirst
+  }: {
+    fieldNames?: FieldName[];
+    oldestFirst?: boolean;
+  } = {}
+): Observable<ICommit> => {
   const fields = getFields(fieldNames);
   return streamProcess<ICommit>({
-    mapData: (stdout) => {
+    mapData(stdout) {
       return stdout
         .split(/\n?<commit>|<\/commit>\n?/g)
         .filter(Boolean)
@@ -64,17 +84,26 @@ export const commits = (directory: string, fieldNames?: FieldName[], oldestFirst
           }, {})
         );
     },
-    start: () => readGitLog(directory, fields, oldestFirst)
+    start() {
+      return readGitLog(directory, fields, oldestFirst);
+    }
   });
 };
 
+/**
+ * @param directory
+ * Absolute path to your locally cloned git repository.
+ */
 export const tags = (directory: string) =>
   streamProcess<ITag>({
-    mapData: (stdout) =>
-      stdout
+    mapData(stdout) {
+      return stdout
         .split('\n')
         .filter(Boolean)
         .map((line) => line.split(' refs/tags/'))
-        .map(([commitHash, tagName]) => ({ commitHash, tagName })),
-    start: () => readGitTags(directory)
+        .map(([commitHash, tagName]) => ({ commitHash, tagName }));
+    },
+    start() {
+      return readGitTags(directory);
+    }
   });

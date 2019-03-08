@@ -35,11 +35,10 @@ npm install --save logservable
 ```js
 import * as logservable from 'logservable';
 
-const commit$ = logservable.commits('/Users/foldleft/Dev/my-project', [
-  'authorDateRelative',
-  'authorName',
-  'commitHash'
-]);
+const commit$ = logservable.commits('/Users/foldleft/Dev/my-project', {
+  fieldNames: ['authorDateRelative', 'authorName', 'commitHash'],
+  oldestFirst: false
+});
 
 const listener = {
   next(commit) {
@@ -71,7 +70,7 @@ The Stream told me it is done.
 
 Absolute path to your locally cloned git repository.
 
-#### `fieldNames:String[]`
+#### `options.fieldNames:String[]`
 
 Optional array of strings representing the data required from each git commit (defaults to all).
 
@@ -99,7 +98,7 @@ treeHash
 
 For more information see the [Git Pretty Formats Documentation](https://git-scm.com/docs/pretty-formats).
 
-#### `oldestFirst:Boolean`
+#### `options.oldestFirst:Boolean`
 
 Whether to read the commits in order of oldest to newest (defaults to false).
 
