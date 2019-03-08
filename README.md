@@ -101,6 +101,10 @@ For more information see the [Git Pretty Formats Documentation](https://git-scm.
 
 Whether to read the commits in order of oldest to newest (defaults to false).
 
+#### `options.skipMergeCommits:Boolean`
+
+Whether to exclude merge commits from being returned (defaults to true).
+
 ## `logservable.tags`
 
 `logservable.tags` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];

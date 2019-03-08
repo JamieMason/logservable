@@ -58,15 +58,20 @@ export interface ITag {
  *
  * @param options.oldestFirst
  * Whether to read the commits in order of oldest to newest (defaults to false)
+ *
+ * @param options.skipMergeCommits
+ * Whether to exclude merge commits from being returned (defaults to true)
  */
 export const commits = (
   directory: string,
   {
     fieldNames,
-    oldestFirst
+    oldestFirst = false,
+    skipMergeCommits = true
   }: {
     fieldNames?: FieldName[];
     oldestFirst?: boolean;
+    skipMergeCommits?: boolean;
   } = {}
 ): Observable<ICommit> => {
   const fields = getFields(fieldNames);
@@ -85,7 +90,7 @@ export const commits = (
         );
     },
     start() {
-      return readGitLog(directory, fields, oldestFirst);
+      return readGitLog(directory, fields, oldestFirst, skipMergeCommits);
     }
   });
 };
