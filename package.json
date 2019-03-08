@@ -5,14 +5,14 @@
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bugs": "https://github.com/JamieMason/logservable/issues",
   "dependencies": {
-    "rxjs": "6.1.0"
+    "rxjs": "6.4.0"
   },
   "devDependencies": {
-    "@types/node": "10.0.8",
-    "prettier": "1.12.1",
-    "rimraf": "2.6.2",
-    "tslint": "5.10.0",
-    "typescript": "2.8.3"
+    "@types/node": "11.10.5",
+    "prettier": "1.16.4",
+    "rimraf": "2.6.3",
+    "tslint": "5.13.1",
+    "typescript": "3.3.3333"
   },
   "files": [
     "dist"

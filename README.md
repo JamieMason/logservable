@@ -14,13 +14,13 @@
 
 ## Contents
 
-* [Installation](#installation)
-* [`logservable.commits`](#logservablecommits)
-  * [`directory:String`](#directorystring)
-  * [`fieldNames:String[]`](#fieldnamesstring)
-  * [`oldestFirst:Boolean`](#oldestfirstboolean)
-* [`logservable.tags`](#logservabletags)
-  * [`directory:String`](#directorystring-1)
+- [Installation](#installation)
+- [`logservable.commits`](#logservablecommits)
+  - [`directory:String`](#directorystring)
+  - [`fieldNames:String[]`](#fieldnamesstring)
+  - [`oldestFirst:Boolean`](#oldestfirstboolean)
+- [`logservable.tags`](#logservabletags)
+  - [`directory:String`](#directorystring-1)
 
 ## Installation
 
