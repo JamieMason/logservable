@@ -6,6 +6,8 @@ export const streamProcess: StreamProcessor = <T>({ start, mapData }: IStreamPro
     const unsubscribe = () => task.kill();
     const task = start();
     task.on('close', () => observer.complete());
-    task.stdout.on('data', (str: string) => mapData(str).forEach((output: T) => observer.next(output)));
+    if (task.stdout) {
+      task.stdout.on('data', (str: string) => mapData(str).forEach((output: T) => observer.next(output)));
+    }
     return unsubscribe;
   });
