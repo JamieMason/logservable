@@ -4,13 +4,11 @@
   "version": "1.3.0",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bugs": "https://github.com/JamieMason/logservable/issues",
-  "dependencies": {
-    "rxjs": "6.4.0"
-  },
   "devDependencies": {
     "@types/node": "11.10.5",
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
+    "rxjs": "6.4.0",
     "tslint": "5.13.1",
     "typescript": "3.3.3333"
   },
@@ -25,6 +23,9 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
+  "peerDependencies": {
+    "rxjs": "6.x.x"
+  },
   "repository": "JamieMason/logservable",
   "scripts": {
     "build": "tsc --project .",
