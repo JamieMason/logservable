@@ -14,17 +14,7 @@
 [![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
 [![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
-## Contents
-
-- [Installation](#installation)
-- [`logservable.commits`](#logservablecommits)
-  - [`directory:String`](#directorystring)
-  - [`fieldNames:String[]`](#fieldnamesstring)
-  - [`oldestFirst:Boolean`](#oldestfirstboolean)
-- [`logservable.tags`](#logservabletags)
-  - [`directory:String`](#directorystring-1)
-
-## Installation
+## :cloud: Installation
 
 ```
 npm install --save logservable
@@ -149,3 +139,10 @@ Absolute path to your locally cloned git repository.
 
 [observable]: http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
 [observer]: http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~ObserverDoc.html
+
+## :raising_hand: Get Help
+
+There are few ways to get help:
+
+1.  For bug reports and feature requests, open issues :bug:
+1.  For direct and quick help, you can use Gitter :rocket:
