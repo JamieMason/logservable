@@ -6,21 +6,18 @@
 [![NPM downloads](http://img.shields.io/npm/dm/logservable.svg?style=flat-square)](https://www.npmjs.com/package/logservable)
 [![Build Status](http://img.shields.io/travis/JamieMason/logservable/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/logservable)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d0a0296af896b46cc528/maintainability)](https://codeclimate.com/github/JamieMason/logservable/maintainability)
-[![Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/logservable)
-[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/foldleft)
-[![Backers](https://opencollective.com/fold_left/backers/badge.svg)](https://opencollective.com/fold_left#backer)
-[![Sponsors](https://opencollective.com/fold_left/sponsors/badge.svg)](https://opencollective.com/fold_left#sponsors)
-[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/logservable?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 [![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
 [![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
-## :cloud: Installation
+## 🌩 Installation
 
 ```
 npm install --save logservable
 ```
 
-## `logservable.commits`
+## 📝 API
+
+### `logservable.commits`
 
 `logservable.commits` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];
 
@@ -55,13 +52,13 @@ Herman Toothrot committed 60121fda22cd43a04716c8a76fa803bf1a81e217 6 hours ago
 The Stream told me it is done.
 ```
 
-### Arguments
+#### Arguments
 
-#### `directory:String`
+##### `directory:String`
 
 Absolute path to your locally cloned git repository.
 
-#### `options.fieldNames:String[]`
+##### `options.fieldNames:String[]`
 
 Optional array of strings representing the data required from each git commit (defaults to all).
 
@@ -89,15 +86,15 @@ treeHash
 
 For more information see the [Git Pretty Formats Documentation](https://git-scm.com/docs/pretty-formats).
 
-#### `options.oldestFirst:Boolean`
+##### `options.oldestFirst:Boolean`
 
 Whether to read the commits in order of oldest to newest (defaults to false).
 
-#### `options.skipMergeCommits:Boolean`
+##### `options.skipMergeCommits:Boolean`
 
 Whether to exclude merge commits from being returned (defaults to true).
 
-## `logservable.tags`
+### `logservable.tags`
 
 `logservable.tags` returns an [RxJS Observable][observable] which takes an [RxJS Observer][observer];
 
@@ -129,20 +126,20 @@ commit 5f6ee8821fbebd01d0910125698afb495c36509c is tagged as 0.3.0
 The Stream told me it is done.
 ```
 
-### Arguments
+#### Arguments
 
-#### `directory:String`
+##### `directory:String`
 
 Absolute path to your locally cloned git repository.
+
+## 🙋🏾‍♀️ Getting Help
+
+- Get help with issues by creating a
+  [Bug Report](https://github.com/JamieMason/logservable/issues/new?template=bug_report.md).
+- Discuss ideas by opening a
+  [Feature Request](https://github.com/JamieMason/logservable/issues/new?template=feature_request.md).
 
 <!-- links -->
 
 [observable]: http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html
 [observer]: http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~ObserverDoc.html
-
-## :raising_hand: Get Help
-
-There are few ways to get help:
-
-1.  For bug reports and feature requests, open issues :bug:
-1.  For direct and quick help, you can use Gitter :rocket:
